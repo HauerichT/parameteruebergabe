@@ -1,6 +1,7 @@
 integer = 10
 string = "Hallo"
 liste = [1, 2, 3]
+liste2 = [3, 2, 1]
 
 
 def callByValueOReference(typ):
@@ -8,28 +9,30 @@ def callByValueOReference(typ):
     print(typ)
 
 
-def listChangeElement(list):
-    if len(list) >= 1:
-        list[1] = "changed"
-    print(list)
+def listChangeElement(li):
+    if len(li) >= 1:
+        li[1] = "changed"
+    print(li)
 
 
-def listNewElement(list):
-    list = [3, 2, 1]
-    print(list)
+def listNewElement(li):
+    li = liste2
+    print(li)
 
 
 print("Vorher:")
 print(integer)
-print(string + "\n")
-
 callByValueOReference(integer)
-callByValueOReference(string)
-print("\nNachher:")
+print("Nachher:")
 print(integer)
-print(string + "\n")
 
-print("Vorher:")
+print("\nVorher:")
+print(string)
+callByValueOReference(string)
+print("Nachher:")
+print(string)
+
+print("\nVorher:")
 print(liste)
 print("Nach der Change-Funktion:")
 listChangeElement(liste)
