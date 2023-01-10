@@ -1,40 +1,37 @@
 integer = 10
 string = "Hallo"
 liste = [1, 2, 3]
-liste2 = [3, 2, 1]
-
-
-def callByValueOReference(typ):
-    typ = "Call By Value"
-    print(typ)
-
-
-def listChangeElement(li):
-    if len(li) >= 1:
-        li[1] = "changed"
-    print(li)
-
-
-def listNewElement(li):
-    li = liste2
-    print(li)
-
 
 print("Vorher:")
-print(integer)
-callByValueOReference(integer)
-print("Nachher:")
-print(integer)
+print("Integer: " + str(integer))
+print("String: " + string)
+print("Liste: " + str(liste))
 
-print("\nVorher:")
-print(string)
-callByValueOReference(string)
-print("Nachher:")
-print(string)
 
-print("\nVorher:")
-print(liste)
-print("Nach der Change-Funktion:")
-listChangeElement(liste)
-print("Nach der New-Funktion:")
-listNewElement(liste)
+def changeInt(a):
+    a = 22
+
+
+def changeString(b):
+    b = "Test"
+
+
+def changeList(c):
+    d = ["blabla", 49]
+    c = d
+
+
+def changeElementList(d):
+    d[1] = "changed"
+
+
+changeInt(integer)
+changeString(string)
+changeList(liste)
+print("changedListe: " + str(liste))
+changeElementList(liste)
+
+print("\nNachher:")
+print("Integer: " + str(integer))
+print("String: " + string)
+print("Liste: " + str(liste))
